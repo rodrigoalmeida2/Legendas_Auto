@@ -1,6 +1,6 @@
-# Transcrição de Áudios em Legendas 🎧🎬
+# Geração de Legendas Automáticas com Tradução 🎧🎬
 
-Este projeto realiza a transcrição automática de áudios para gerar legendas. Usando a **Deepgram API**, é possível processar arquivos de áudio, converter a fala em texto e criar legendas automáticas com alta precisão.
+Este projeto realiza a geração de Legendas com opção de tradução para outras línguas. 
 
 ## Índice
 
@@ -17,36 +17,44 @@ Este projeto realiza a transcrição automática de áudios para gerar legendas.
 
 ## Sobre o Projeto
 
-Este projeto foi criado para facilitar a transcrição de áudios e vídeos, gerando automaticamente legendas sincronizadas. Ele utiliza a **API do Deepgram** para realizar a transcrição de forma eficiente e precisa, com suporte a múltiplos formatos de áudio e opções de pontuação automática.
+Este projeto foi criado para facilitar o entendimento de videos, gerando automaticamente legendas sincronizadas. O sistema ultiliza **FFmpeg** para extrair o áudio do vídeo, **Deepgram API** para transcrever o áudio, uma **Cloud Translation API** para traduzir o texto transcrito e uma interface feita em **streamlit**. Com essas ferramentas é possível processar arquivos de vídeo, converter a fala em texto e criar legendas automáticas com alta precisão.
 
-## Ferramentas Utilizadas
+## Ferramentas Ultilizadas
 
-- **Deepgram API**:
-  - **Função**: Serviço de transcrição de áudio baseado em IA, capaz de processar arquivos de áudio ou vídeo e converter fala em texto com alta precisão.
-  - **Uso**: O áudio é enviado para a API, que retorna a transcrição já pontuada e organizada.
-  
 - **Python**:
   - **Função**: Linguagem principal usada no projeto para gerenciar a integração com a API, manipular arquivos e processar as transcrições.
   - **Uso**: O código Python se comunica com a API do Deepgram para obter as transcrições e organiza os dados para a geração de legendas.
 
-- **Asyncio**:
-  - **Função**: Biblioteca que permite o processamento assíncrono de várias transcrições ao mesmo tempo, aumentando a eficiência.
-  - **Uso**: Processa várias requisições à API simultaneamente, sem bloquear o código.
+- **Deepgram API**:
+  - **Função**: Serviço de transcrição de áudio baseado em IA, capaz de processar arquivos de áudio ou vídeo e converter fala em texto com alta precisão.
+  - **Uso**: O áudio é enviado para a API, que retorna a transcrição já pontuada e organizada.
+
+- **Cloud Translation API**:
+  - **Função**: Usa a tradução automática neural do Google para permitir que você traduza dinamicamente textos por meio da API usando um modelo personalizado pré-treinado do Google ou um modelo de linguagem grande (LLM) especializado em tradução.
+  - **Uso**: Um texto é enviado para a API com o código da lingua que se deseja, retornando o texto traduzido.
+
+- **Streamlit**:
+  - **Função**: Streamlit é um FrameWork Python de código aberto para criação de sites dinâmicos com apenas algumas linhas de código.
+  - **Uso**: Basta rodar o script onde ele esta implementado.
+
+- **FFmpeg**:
+  - **Função**: FrameWork de multimídia capaz de decodificar, codificar, transcodificar, multiplexar, demultiplexar, transmitir, aplicar filtros e reproduzir praticamente qualquer formato de mídia criado por humanos e máquinas.
+  - **Uso**: Um arquivo multimídia é inserido com comandos, e é retornado com os resultados deste comando. 
 
 ## Como Funciona
 
-1. **Entrada de Áudio**:
-   - O usuário carrega um arquivo de áudio para o sistema.
-  
-2. **Processamento**:
-   - O áudio do vídeo é extraído e enviado para a **API do Deepgram**.
-   - A API realiza a transcrição do áudio, reconhecendo a fala e adicionando pontuação.
+1. **Entrada de Dados**:
+   - O usuário carrega um arquivo de vídeo para o sistema
+   - Escolhe a língua de origem do vídeo e a língua na qual ele quer a legenda
 
-3. **Sincronização de Legendas**:
-   - A transcrição é associada aos tempos do áudio, gerando legendas automáticas.
+2. **Processamento**:
+   - Extrai o áudio do vídeo com ffmpeg
+   - O áudio é enviado para a **API do Deepgram**, retornando a transcrição em formato **srt**
+   - Usando a **Cloud Translation API**, é passado o arquivo **srt** e devolvido ele traduzido
+   - O arquivo é passado ao ffmpeg, colocado no vídeo e salvo
   
-4. **Saída**:
-   - O arquivo de vídeo é atualizado com as legendas ou a transcrição é salva separadamente.
+5. **Saída**:
+   - - Um botão de download com o arquivo aparece e o usuário pode, então, baixar
 
 ## Como Usar
 
@@ -60,7 +68,7 @@ Este projeto foi criado para facilitar a transcrição de áudios e vídeos, ger
 Execute o seguinte comando para instalar as dependências necessárias:
 
 ```bash
-pip install deepgram-sdk==2.* python-dotenv
+pip install -r requirements.txt
 ```
 ### 3. Usar sua chave
 Crie um arquivo ```.env``` e coleque sua chave e depois use o dotenv para usa-lá
