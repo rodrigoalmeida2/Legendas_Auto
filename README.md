@@ -112,6 +112,7 @@ Este projeto foi criado para facilitar o entendimento de videos, gerando automat
 
 ## Interface
 
+![Interface Streamlit](https://github.com/user-attachments/assets/fccc882b-f43d-4e64-b6a7-e523cbc10989)
 
 
 ## Contribuição  
