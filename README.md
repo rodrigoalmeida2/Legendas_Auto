@@ -14,8 +14,8 @@ Este projeto realiza a geração de Legendas com opção de tradução para outr
 
 ---
 
-## Sobre o Projeto 📜
-
+## Sobre o Projeto 
+📜  
 Este projeto foi criado para facilitar o entendimento de videos, gerando automaticamente legendas sincronizadas. O sistema ultiliza **FFmpeg** para extrair o áudio do vídeo, **Deepgram API** para transcrever o áudio, uma **Cloud Translation API** para traduzir o texto transcrito e uma interface feita em **Streamlit**. Com essas ferramentas é possível processar arquivos de vídeo, converter a fala em texto e criar legendas automáticas com alta precisão.
 
 ## Ferramentas Ultilizadas 🪛⚙️🔧
@@ -40,8 +40,8 @@ Este projeto foi criado para facilitar o entendimento de videos, gerando automat
   - **Função**: FrameWork de multimídia capaz de decodificar, codificar, transcodificar, multiplexar, demultiplexar, transmitir, aplicar filtros e reproduzir praticamente qualquer formato de mídia criado por humanos e máquinas.
   - **Uso**: Um arquivo multimídia é inserido com comandos, e é retornado com os resultados deste comando. 
 
-## Como Funciona 🛠️
-
+## Como Funciona 
+🛠️  
 1. **Entrada de Dados**:
    - O usuário carrega um arquivo de vídeo para o sistema
    - Escolhe a língua de origem do vídeo e a língua na qual ele quer a legenda
@@ -55,8 +55,8 @@ Este projeto foi criado para facilitar o entendimento de videos, gerando automat
 5. **Saída**:
    - - Um botão de download com o arquivo aparece e o usuário pode, então, baixar
 
-## Como Usar 🤳🏽
-
+## Como Usar 
+🤳🏽
 ### 1. Construindo o Ambiente
 
 - Abra um terminal na pasta do seu projeto e execute o comando:
@@ -114,7 +114,8 @@ Este projeto foi criado para facilitar o entendimento de videos, gerando automat
 
 
 
-## Contribuição  🙏🏼
+## Contribuição  
+🙏🏼
 Contribuições são bem-vindas! Siga os passos abaixo:  
 
   - Faça um fork do repositório.
