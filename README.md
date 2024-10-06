@@ -18,8 +18,8 @@ Este projeto realiza a geração de Legendas com opção de tradução para outr
 📜  
 Este projeto foi criado para facilitar o entendimento de videos, gerando automaticamente legendas sincronizadas. O sistema ultiliza **FFmpeg** para extrair o áudio do vídeo, **Deepgram API** para transcrever o áudio, uma **Cloud Translation API** para traduzir o texto transcrito e uma interface feita em **Streamlit**. Com essas ferramentas é possível processar arquivos de vídeo, converter a fala em texto e criar legendas automáticas com alta precisão.
 
-## Ferramentas Ultilizadas 🪛⚙️🔧
-
+## Ferramentas Ultilizadas 
+🪛⚙️🔧  
 - **Python**: 🐍
   - **Função**: Linguagem principal usada no projeto para gerenciar a integração com a API, manipular arquivos e processar as transcrições.
   - **Uso**: O código Python se comunica com a API do Deepgram para obter as transcrições e organiza os dados para a geração de legendas.
