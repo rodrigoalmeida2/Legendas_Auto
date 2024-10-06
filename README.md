@@ -8,9 +8,10 @@ Este projeto realiza a geração de Legendas com opção de tradução para outr
 2. [Ferramentas Utilizadas](#ferramentas-utilizadas)
 3. [Como Funciona](#como-funciona)
 4. [Como Usar](#como-usar)
-5. [Contribuição](#contribuição)
-6. [Contato](#contato)
-7. [Licença](#licença)
+5. [Interface](#interface)
+6. [Contribuição](#contribuição)
+7. [Contato](#contato)
+8. [Licença](#licença)
 
 ---
 
@@ -109,6 +110,7 @@ Este projeto foi criado para facilitar o entendimento de videos, gerando automat
   ```bash
   streamlit run main.py
   ```
+
 
 ## Interface
 
