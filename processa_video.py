@@ -20,7 +20,7 @@ def extrai_audio(video_path, audio_output_path):
     subprocess.run(comando, shell=True)
 
 # Transcreve o áudio
-def transcricao(audio_path):
+def transcricao(audio_path, source_lg):
     try:
         with open(audio_path, "rb") as file:
             buffer_data = file.read()
@@ -30,7 +30,8 @@ def transcricao(audio_path):
         }
         # Coloca as opções do áudio
         options = PrerecordedOptions(
-            model="nova-2",
+            model="whisper-medium",
+            language=source_lg,
             smart_format=True,
         )
         # Chama a função para transcrever
@@ -42,49 +43,44 @@ def transcricao(audio_path):
 
 # Cria um arquivo srt para as legendas
 def cria_srt(response):
-        try:
-            # Pega a transcrição, passa para o DeepgramConverter, que devolve um srt
-            transcription = DeepgramConverter(response)
-            # Para srt 
-            captions = srt(transcription)
+    # Pega a transcrição, passa para o DeepgramConverter, que devolve um srt
+    transcription = DeepgramConverter(response)
+    # Para srt 
+    captions = srt(transcription)
+    # Transforma os bytes em uma string usando a codificação "utf-8"
+    if isinstance(captions, bytes):
+        captions = captions.decode("utf-8")
 
-            return captions
-        
-        except Exception as e:
-            print(f"Exception: {e}")
+    return captions
 
 # Traduz a legenda usando API do googlecloud
 def translate_text(target: str, text: str) -> dict:
-    try:
-        # Inicia o client
-        translate_client = translate.Client()
-        # Transforma os bytes em uma string usando a codificação "utf-8"
-        if isinstance(text, bytes):
-            text = text.decode("utf-8")
-        # Pega o resultado da tradução
-        result = translate_client.translate(text, target_language=target)
-        
-        return result["translatedText"]
+    # Inicia o client
+    translate_client = translate.Client()
+    # Transforma os bytes em uma string usando a codificação "utf-8"
+    if isinstance(text, bytes):
+        text = text.decode("utf-8")
+    # Pega o resultado da tradução
+    result = translate_client.translate(text, target_language=target)
     
-    except Exception as e:
-        print(f"Exception: {e}")
+    return result["translatedText"]
 
 # Transforma o texto traduzido em um arquivo e troca "&gt;" por ">" no texto
 def retira_gt(result, output_srt):
     # Escreve o conteúdo inicial no arquivo
-    with open("texto_trauzido.srt", "w", encoding="utf-8") as srt:
+    with open("td.srt", "w", encoding="utf-8") as srt:
         srt.write(result)
     # Lê o arquivo, faz a substituição e salva o resultado em outro arquivo
-    with open("texto_trauzido.srt", 'r', encoding="utf-8") as entrada, open(output_srt, 'w', encoding="utf-8") as saida:
+    with open("td.srt", 'r', encoding="utf-8") as entrada, open(output_srt, 'w', encoding="utf-8") as saida:
         for linha in entrada:
             linha_modificada = linha.replace("&gt;", ">")
             saida.write(linha_modificada)
     # remove o arquivo temporário texto traduzido
-    os.remove("texto_trauzido.srt")
+    os.remove("td.srt")
 
 # Reescreve o srt traduzido num formato srt
 def organizar_srt_linha_unica(input_srt, output_srt):
-    with open(input_srt, "r") as entrada, open(output_srt, 'w') as saida:
+    with open(input_srt, "r", encoding="utf-8") as entrada, open(output_srt, 'w', encoding="utf-8") as saida:
         texto = entrada.read()
         # Separa o conteúdo único em blocos de legenda (id, timestamps, e texto)
         padrao = r'(\d+)\s+(\d{2}:\d{2}:\d{2},\d{3}) --> (\d{2}:\d{2}:\d{2},\d{3})\s+(.+?)(?=\d+\s+\d{2}:\d{2}:\d{2},\d{3} -->|\s*\Z)'
@@ -106,13 +102,13 @@ def processa_video(video_path, source_lg, target_lg):
     audio_path = os.path.splitext(video_path)[0] + ".wav"
     extrai_audio(video_path, audio_path)
     # 2. Faz a transcrição do arquivo
-    response = transcricao(audio_path)
+    response = transcricao(audio_path, source_lg)
     # Para arquivos que não solicitam tradução
     if source_lg == target_lg:
         # 3. Cria um arquivo srt
         captions = cria_srt(response)
         srt_path = os.path.splitext(video_path)[0] + ".srt"
-        with open(srt_path, "w") as srt:
+        with open(srt_path, "w", encoding="utf-8") as srt:
             srt.write(captions)
         # 4. Adiciona legenda no video
         output_video_path = os.path.splitext(video_path)[0] + "_subtitled.mp4"

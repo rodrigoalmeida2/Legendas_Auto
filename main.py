@@ -3,29 +3,29 @@ import processa_video as pv
 import os
 import shutil
 
-@st.cache_data
+
 def gerar_legenda(uploaded_file, source_lg, target_lg):
     """Processa o vídeo, gera a legenda e disponibiliza para download."""
     if uploaded_file:
         # Criar uma pasta temporária para os arquivos
-        temp_dir = "temp_folder"
-        os.makedirs(temp_dir, exist_ok=True)
+        #temp_dir = "temp_folder"
+        os.makedirs("temp_folder", exist_ok=True)
 
         # Caminho completo do arquivo de vídeo na pasta temporária
-        video_path = os.path.join(temp_dir, uploaded_file.name)
+        #video_path = os.path.join("temp_folder", uploaded_file.name)
 
         # Salva o vídeo na pasta temporária
-        with open(video_path, "wb") as temp:
+        with open(f"temp_folder/{uploaded_file.name}", "wb") as temp:
             temp.write(uploaded_file.getbuffer())
 
         # Chama a função que gera a legenda
-        pv.processa_video(video_path, source_lg, target_lg)
+        pv.processa_video(f"temp_folder/{uploaded_file.name}", source_lg, target_lg)
 
         # Gera o caminho do arquivo legendado
-        subtitled_video_path = video_path.replace(".mp4", "_subtitled.mp4")
+        subtitled_video_path = uploaded_file.name.replace(".mp4", "_subtitled.mp4")
 
         # Botão para download do vídeo legendado
-        with open(subtitled_video_path, "rb") as file:
+        with open(f"temp_folder/{subtitled_video_path}", "rb") as file:
             st.download_button(
                 label="Download vídeo com legenda",
                 data=file,
@@ -34,7 +34,7 @@ def gerar_legenda(uploaded_file, source_lg, target_lg):
             )
 
         # Remove a pasta temporária após o processo
-        shutil.rmtree(temp_dir)
+        shutil.rmtree("temp_folder")
 
 if __name__ == "__main__":
     # Título da aplicação
@@ -46,7 +46,7 @@ if __name__ == "__main__":
     # Seleção de idioma de origem
     source_lg = st.selectbox(
         "Língua de origem do vídeo:",
-        options=["pt", "en", "fr"],
+        ("pt", "en", "fr"),
         index=None,
         placeholder="Selecione origem..."
     )
@@ -54,7 +54,7 @@ if __name__ == "__main__":
     # Seleção de idioma para a legenda
     target_lg = st.selectbox(
         "Língua que você deseja para a legenda:",
-        options=["pt", "en", "fr"],
+        ("pt", "en", "fr"),
         index=None,
         placeholder="Selecione destino..."
     )
