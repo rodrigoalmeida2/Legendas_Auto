@@ -36,8 +36,8 @@ def gerar_legenda(uploaded_file, source_lg, target_lg):
         # Remove a pasta temporária após o processo
         shutil.rmtree("temp_folder")
 
-if __name__ == "__main__":
-    # Título da aplicação
+def main():
+        # Título da aplicação
     st.title("Legendas Automáticas")
 
     # Upload do arquivo de vídeo
@@ -62,3 +62,6 @@ if __name__ == "__main__":
     # Botão para gerar a legenda
     if st.button("Gerar Legenda"):
         gerar_legenda(uploaded_file, source_lg, target_lg)
+
+if __name__ == "__main__":
+    main()

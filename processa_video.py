@@ -49,7 +49,7 @@ def cria_srt(response):
     captions = srt(transcription)
     # Transforma os bytes em uma string usando a codificação "utf-8"
     if isinstance(captions, bytes):
-        captions = captions.decode("utf-8")
+        captions = captions.encode("utf-8")
 
     return captions
 
@@ -68,15 +68,15 @@ def translate_text(target: str, text: str) -> dict:
 # Transforma o texto traduzido em um arquivo e troca "&gt;" por ">" no texto
 def retira_gt(result, output_srt):
     # Escreve o conteúdo inicial no arquivo
-    with open("td.srt", "w", encoding="utf-8") as srt:
+    with open("texto_traduzido.srt", "w", encoding="utf-8") as srt:
         srt.write(result)
     # Lê o arquivo, faz a substituição e salva o resultado em outro arquivo
-    with open("td.srt", 'r', encoding="utf-8") as entrada, open(output_srt, 'w', encoding="utf-8") as saida:
+    with open("texto_traduzido.srt", 'r', encoding="utf-8") as entrada, open(output_srt, 'w', encoding="utf-8") as saida:
         for linha in entrada:
             linha_modificada = linha.replace("&gt;", ">")
             saida.write(linha_modificada)
     # remove o arquivo temporário texto traduzido
-    os.remove("td.srt")
+    os.remove("texto_traduzido.srt")
 
 # Reescreve o srt traduzido num formato srt
 def organizar_srt_linha_unica(input_srt, output_srt):
