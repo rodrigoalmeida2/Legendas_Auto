@@ -121,7 +121,6 @@ Este projeto foi criado para facilitar o entendimento de videos, gerando automat
 🙏🏼
 Contribuições são bem-vindas! Siga os passos abaixo:  
 
-  - Faça um fork do repositório.
   - Crie uma branch com a sua feature
     ```bash
     git checkout -b feature/nova-feature
