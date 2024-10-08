@@ -63,7 +63,7 @@ def translate_text(target: str, text: str) -> dict:
         translate_client = translate.Client()
         # Transforma os bytes em uma string usando a codificação "utf-8"
         if isinstance(text, bytes):
-            text = text.decode("utf-8")
+            text = text.encode("utf-8")
         # Pega o resultado da tradução
         result = translate_client.translate(text, target_language=target)
         
