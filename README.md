@@ -1,4 +1,4 @@
-# Geração de Legendas Automáticas com Tradução 📽️🎞️🎧
+# Geração de Legendas Automáticas com Tradução 📽️🎧
 
 Este projeto realiza a geração de Legendas com opção de tradução para outras línguas. 
 
