@@ -60,48 +60,48 @@ Este projeto foi criado para facilitar o entendimento de videos, gerando automat
 🤳🏽
 ### 1. Construindo o Ambiente
 
-- Abra um terminal na pasta do seu projeto e execute o comando:
-  ```bash
-  git clone https://github.com/rodrigoalmeida2/Legendas_Auto.git
-- Crie um ambiente virtual:
-  ```bash
-  python -m venv nome_da_sua_venv
-- Inicie sua venv:
-  ```bash
-  nome_da_sua_venv/Scripts/Activate
-- Instalar os FrameWorks e ferramentas necessárias:
-  ```bash
-  pip install -r requirements.txt
+  1. Abra um terminal na pasta do seu projeto e execute o comando:
+      ```bash
+      git clone https://github.com/rodrigoalmeida2/Legendas_Auto.git
+  2. Crie um ambiente virtual:
+      ```bash
+      python -m venv nome_da_sua_venv
+  3. Inicie sua venv:
+      ```bash
+      nome_da_sua_venv/Scripts/Activate
+  4. Instalar os FrameWorks e ferramentas necessárias:
+      ```bash
+      pip install -r requirements.txt
 
 ### 2. Instalando o FFmpeg e Configurando:
   
-  - Instale o Chocolatey:
+  Instale o Chocolatey:
   
-  - Abra o PowerShell como Administrador e execute o seguinte comando para instalar o Chocolatey:
+  1. Abra o PowerShell como Administrador e execute o seguinte comando para instalar o Chocolatey:
   ```bash
     Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 ```
-  - Instale o FFmpeg:
-    - Após instalar o Chocolatey, execute o seguinte comando no PowerShell:
-    ```bash
-    choco install ffmpeg
-  - Após a instalação, você pode verificar se o FFmpeg foi instalado corretamente:
-    ```bash
-    ffmpeg -version
-  - Método 2: Instalação Manual:
-    - Acesse [Instalação manual FFmpeg](https://youtu.be/Q267RF1I3GE)
+  2. Instale o FFmpeg:
+      1. Após instalar o Chocolatey, execute o seguinte comando no PowerShell:
+      ```bash
+      choco install ffmpeg
+  3. Após a instalação, você pode verificar se o FFmpeg foi instalado corretamente:
+      ```bash
+      ffmpeg -version
+  4. Método 2: Instalação Manual:
+      1. Acesse [Instalação manual FFmpeg](https://youtu.be/Q267RF1I3GE)
   
 ### 3. Configurar as APIs
-
-- **Deepgram**
-  - Acesse o [site do Deepgram](https://deepgram.com).
-  - Crie uma conta e obtenha sua chave de API.
-- **Google Cloud**
-  - Acesse o [Google Cloud](cloud.google.com)
-  - crie sua conta, acesse o console do cloud, crie um projeto
-  - Na barra de pesquisa do projeto, digite **Cloud Translation API**
-  - Quando abrir, clique em **enable**, Aparecerá a opção gerenciar, clique nela, depois vá até **Credentials**
-  - Clique em **CREATE CREDENTIALS**, **API Key**
+-
+    1. **Deepgram**
+        1. Acesse o [site do Deepgram](https://deepgram.com).
+        2. Crie uma conta e obtenha sua chave de API.
+    2. **Google Cloud**
+        1. Acesse o [Google Cloud](cloud.google.com)
+        2. crie sua conta, acesse o console do cloud, crie um projeto
+        3. Na barra de pesquisa do projeto, digite **Cloud Translation API**
+        4. Quando abrir, clique em **enable**, Aparecerá a opção gerenciar, clique nela, depois vá até **Credentials**
+        5. Clique em **CREATE CREDENTIALS**, **API Key**
 
 ### 4. Usar suas chaves
   - Crie um arquivo ```.env```, coleque suas chaves e depois use o dotenv para usa-lás ou coloque direto no código
