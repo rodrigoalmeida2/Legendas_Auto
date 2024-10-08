@@ -128,5 +128,6 @@ def processa_video(video_path, source_lg, target_lg):
         # 7. Adiciona legenda no video
         output_video_path = os.path.splitext(video_path)[0] + "_subtitled.mp4"
         add_legenda_no_video(video_path, srt_path, output_video_path)
+        # 8. Remove o arquivo srt que tem uma linha
         os.remove(srt_path_linha)
 
