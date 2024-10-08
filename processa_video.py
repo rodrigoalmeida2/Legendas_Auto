@@ -43,27 +43,33 @@ def transcricao(audio_path, source_lg):
 
 # Cria um arquivo srt para as legendas
 def cria_srt(response):
-    # Pega a transcrição, passa para o DeepgramConverter, que devolve um srt
-    transcription = DeepgramConverter(response)
-    # Para srt 
-    captions = srt(transcription)
-    # Transforma os bytes em uma string usando a codificação "utf-8"
-    if isinstance(captions, bytes):
-        captions = captions.encode("utf-8")
+    try:
+        # Pega a transcrição, passa para o DeepgramConverter, que devolve um srt
+        transcription = DeepgramConverter(response)
+        # Para srt 
+        captions = srt(transcription)
+        # Transforma os bytes em uma string usando a codificação "utf-8"
+        if isinstance(captions, bytes):
+            captions = captions.encode("utf-8")
 
-    return captions
+        return captions
+    except Exception as e:
+        print(f"Error:{e}")
 
 # Traduz a legenda usando API do googlecloud
 def translate_text(target: str, text: str) -> dict:
-    # Inicia o client
-    translate_client = translate.Client()
-    # Transforma os bytes em uma string usando a codificação "utf-8"
-    if isinstance(text, bytes):
-        text = text.decode("utf-8")
-    # Pega o resultado da tradução
-    result = translate_client.translate(text, target_language=target)
-    
-    return result["translatedText"]
+    try:
+        # Inicia o client
+        translate_client = translate.Client()
+        # Transforma os bytes em uma string usando a codificação "utf-8"
+        if isinstance(text, bytes):
+            text = text.decode("utf-8")
+        # Pega o resultado da tradução
+        result = translate_client.translate(text, target_language=target)
+        
+        return result["translatedText"]
+    except Exception as e:
+        print(f"Error:{e}")
 
 # Transforma o texto traduzido em um arquivo e troca "&gt;" por ">" no texto
 def retira_gt(result, output_srt):
