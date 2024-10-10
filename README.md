@@ -1,6 +1,6 @@
 <div align="center">
   
-[![English](https://img.shields.io/badge/lang-English-blue.svg)](https://github.com/rodrigoalmeida2/Legendas_Auto/edit/main/README.en.md)
+[![English](https://img.shields.io/badge/lang-English-blue.svg)](https://github.com/rodrigoalmeida2/Legendas_Auto/blob/main/README.en.md)
 
 
 # Geração de Legendas Automáticas com Tradução 📽️🎧
