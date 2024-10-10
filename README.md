@@ -1,7 +1,6 @@
 <div align="center">
   
-[![English](https://img.shields.io/badge/lang-English-blue.svg)](https://translate.google.com/translate?sl=auto&tl=en&u=https://github.com/rodrigoalmeida2/Legendas_Auto/edit/main/README.md)
-
+[![English](https://img.shields.io/badge/lang-English-blue.svg)](https://github.com/rodrigoalmeida2/Legendas_Auto/edit/main/README.en.md)
 
 
 # Geração de Legendas Automáticas com Tradução 📽️🎧
@@ -128,12 +127,7 @@ Este projeto foi criado para facilitar o entendimento de videos, gerando automat
 
 ![Interface Streamlit](https://github.com/user-attachments/assets/fccc882b-f43d-4e64-b6a7-e523cbc10989)
 
-## Problemas e melhorias
 
-O **Streamlit** só permite 200 MB de upload. Se você desejar fazer um upload maior que o limite, passe este comando na hora de rodar o código:
-  ```bash
-  streamlit run main.py --server.maxUploadSize 200
-  ```
 ## Contribuição  
 🙏🏼
 Contribuições são bem-vindas! Siga os passos abaixo:  
