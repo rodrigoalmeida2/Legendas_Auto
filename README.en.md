@@ -8,14 +8,14 @@ This project generates subtitles with the option of translating them into other 
 
 ## Index 📇
 
-1. [About the Project](#about-the-project)
-2. [Tools Used](#tools-used)
-3. [How It Works](#how-it-works)
-4. [How to Use](#how-to-use)
-5. [Interface](#interface)
-6. [Contribution](#contribution)
-7. [Contact](#contact)
-8. [License](#license)
+  1. [About the Project](#about-the-project)
+  2. [Tools Used](#tools-used)
+  3. [How It Works](#how-it-works)
+  4. [How to Use](#how-to-use)
+  5. [Interface](#interface)
+  6. [Contribution](#contribution)
+  7. [Contact](#contact)
+  8. [License](#license)
 
 ---
 
@@ -101,16 +101,16 @@ This project was created to make it easier to understand videos by automatically
 
 ### 3. Configure APIs
   -
-  1. **Deepgram**
-    1. Go to [Deepgram website](https://deepgram.com).
-    2. Create an account and get your API key. 2.
-  
-  1. **Google Cloud**
-    1. Access [Google Cloud](cloud.google.com)
-    2. Create your account, access the cloud console, create a project
-    3. In the project search bar, type **Cloud Translation API**
-    4. When it opens, click on **enable**. The manage option will appear, click on it, then go to **Credentials**
-    5. Click on **CREATE CREDENTIALS**, **API Key**
+    1. **Deepgram**
+        1. Go to [Deepgram website](https://deepgram.com).
+        2. Create an account and get your API key.
+    
+    2. **Google Cloud**
+        1. Access [Google Cloud](cloud.google.com)
+        2. Create your account, access the cloud console, create a project
+        3. In the project search bar, type **Cloud Translation API**
+        4. When it opens, click on **enable**. The manage option will appear, click on it, then go to **Credentials**
+        5. Click on **CREATE CREDENTIALS**, **API Key**
 
 ### 4. Use your keys
   - Create a ```.env``` file, paste your keys and then use dotenv to use them or put them directly in the code
