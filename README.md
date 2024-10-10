@@ -11,14 +11,14 @@ Este projeto realiza a geração de Legendas com opção de tradução para outr
 
 ## Índice 📇
 
-1. [Sobre o Projeto](#sobre-o-projeto)
-2. [Ferramentas Utilizadas](#ferramentas-utilizadas)
-3. [Como Funciona](#como-funciona)
-4. [Como Usar](#como-usar)
-5. [Interface](#interface)
-6. [Contribuição](#contribuição)
-7. [Contato](#contato)
-8. [Licença](#licença)
+  1. [Sobre o Projeto](#sobre-o-projeto)
+  2. [Ferramentas Utilizadas](#ferramentas-utilizadas)
+  3. [Como Funciona](#como-funciona)
+  4. [Como Usar](#como-usar)
+  5. [Interface](#interface)
+  6. [Contribuição](#contribuição)
+  7. [Contato](#contato)
+  8. [Licença](#licença)
 
 ---
 
