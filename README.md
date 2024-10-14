@@ -16,8 +16,7 @@ Este projeto realiza a geração de Legendas com opção de tradução para outr
   3. [Como Funciona](#como-funciona)
   4. [Como Usar](#como-usar)
   5. [Interface](#interface)
-  6. [Contribuição](#contribuição)
-  7. [Contato](#contato)
+  6. [Exemplo](#exemplo)
   8. [Licença](#licença)
 
 ---
@@ -126,6 +125,12 @@ Este projeto foi criado para facilitar o entendimento de videos, gerando automat
 ## Interface
 
 ![Interface Streamlit](https://github.com/user-attachments/assets/fccc882b-f43d-4e64-b6a7-e523cbc10989)
+
+## Exemplo
+
+https://github.com/user-attachments/assets/04599e8c-f2ef-45a3-bfa5-46f83a518d3a
+
+
 
 ## Licença
 - Este projeto está licenciado sob a licença MIT - veja o arquivo LICENSE para mais detalhes.
