@@ -30,7 +30,7 @@ def transcricao(audio_path, source_lg):
         }
         # Coloca as opções do áudio
         options = PrerecordedOptions(
-            model="whisper-medium",
+            model="nova-2",
             language=source_lg,
             smart_format=True,
         )
