@@ -1,17 +1,23 @@
+<div align="center">
+  
+[![English](https://img.shields.io/badge/lang-English-blue.svg)](https://github.com/rodrigoalmeida2/Legendas_Auto/blob/main/README.en.md)
+
+
 # Geração de Legendas Automáticas com Tradução 📽️🎧
 
 Este projeto realiza a geração de Legendas com opção de tradução para outras línguas. 
 
+</div>
+
 ## Índice 📇
 
-1. [Sobre o Projeto](#sobre-o-projeto)
-2. [Ferramentas Utilizadas](#ferramentas-utilizadas)
-3. [Como Funciona](#como-funciona)
-4. [Como Usar](#como-usar)
-5. [Interface](#interface)
-6. [Contribuição](#contribuição)
-7. [Contato](#contato)
-8. [Licença](#licença)
+  1. [Sobre o Projeto](#sobre-o-projeto)
+  2. [Ferramentas Utilizadas](#ferramentas-utilizadas)
+  3. [Como Funciona](#como-funciona)
+  4. [Como Usar](#como-usar)
+  5. [Interface](#interface)
+  6. [Exemplo](#exemplo)
+  8. [Licença](#licença)
 
 ---
 
@@ -110,37 +116,21 @@ Este projeto foi criado para facilitar o entendimento de videos, gerando automat
   ```bash
   streamlit run main.py
   ```
-
+### 6. Limite de Upload
+  - O **Streamlit** só permite 200 MB de upload. Se você desejar fazer um upload maior que o limite, passe este comando na hora de rodar o código:
+  ```bash
+  streamlit run main.py --server.maxUploadSize 200
+  ```
 
 ## Interface
 
 ![Interface Streamlit](https://github.com/user-attachments/assets/fccc882b-f43d-4e64-b6a7-e523cbc10989)
 
+## Exemplo
 
-## Contribuição  
-🙏🏼
-Contribuições são bem-vindas! Siga os passos abaixo:  
+https://github.com/user-attachments/assets/04599e8c-f2ef-45a3-bfa5-46f83a518d3a
 
-  - Crie uma branch com a sua feature
-    ```bash
-    git checkout -b feature/nova-feature
-  - Commit suas mudanças
-    ```bash
-    git commit -m "Adiciona nova feature"
-  - Envie para o repositório original
-    ```bash
-    git push origin feature/nova-feature
-  - Abra um Pull Request.
 
-## Contato  
-<p align="left">
-  <a href="mailto:rodrigoalmeida350.ra@gmail.com" title="Gmail">
-  <img src="https://img.shields.io/badge/-Gmail-FF0000?style=flat-square&labelColor=FF0000&logo=gmail&logoColor=white&link=LINK-DO-SEU-GMAIL" alt="Gmail"/></a>
-  <a href="https://www.linkedin.com/in/rodrigo101/" title="LinkedIn">
-  <img src="https://img.shields.io/badge/-Linkedin-0e76a8?style=flat-square&logo=Linkedin&logoColor=white&link=LINK-DO-SEU-LINKEDIN" alt="LinkedIn"/></a>
-  <a href="https://www.instagram.com/rodrigoalmeida2k/" title="Instagram">
-  <img src="https://img.shields.io/badge/-Instagram-DF0174?style=flat-square&labelColor=DF0174&logo=instagram&logoColor=white&link=LINK-DO-SEU-INSTAGRAM" alt="Instagram"/></a>
-</p>
 
 ## Licença
 - Este projeto está licenciado sob a licença MIT - veja o arquivo LICENSE para mais detalhes.
